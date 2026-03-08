@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UrbanIQ</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="nav-logo">Urban<span>IQ</span></div>
+
+<div class="nav-links">
+
+<a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+<a onclick="showPage('cities')" id="nav-cities">Cities</a>
+<a onclick="showPage('compare')" id="nav-compare">Compare</a>
+<a onclick="showPage('hdi')" id="nav-hdi">HDI</a>
+<a onclick="showPage('aqi')" id="nav-aqi">Air Quality</a>
+<a onclick="showPage('infra')" id="nav-infra">Infrastructure</a>
+<a onclick="showPage('resources')" id="nav-resources">Resources</a>
+
+</div>
+
+</nav>
+
+
+<div id="page-home" class="page active">
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Compare <span>Indian Cities</span> Intelligently</h1>
+
+<p>
+Housing, HDI, AQI, infrastructure — all in one place.
+</p>
+
+<div class="search-bar">
+
+<select id="search-city">
+
+<option value="all">All Cities</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Bengaluru">Bengaluru</option>
+<option value="Delhi NCR">Delhi NCR</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Chennai">Chennai</option>
+<option value="Kolkata">Kolkata</option>
+<option value="Pune">Pune</option>
+
+</select>
+
+<select id="search-cat">
+
+<option value="all">Category</option>
+<option value="housing">Housing</option>
+<option value="education">Education</option>
+<option value="aqi">Air Quality</option>
+<option value="employment">Employment</option>
+
+</select>
+
+<select id="search-profile">
+
+<option value="all">Profile</option>
+<option value="student">Student</option>
+<option value="professional">Professional</option>
+<option value="family">Family</option>
+
+</select>
+
+<button onclick="runSearch()">Explore</button>
+
+</div>
+
+<div id="results"></div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<div id="page-cities" class="page">
+<h2>Major Cities</h2>
+<p>Select a city to view information.</p>
+</div>
+
+
+<div id="page-compare" class="page">
+<h2>City Comparison</h2>
+</div>
+
+
+<div id="page-hdi" class="page">
+<h2>Human Development Index</h2>
+</div>
+
+
+<div id="page-aqi" class="page">
+<h2>Air Quality</h2>
+</div>
+
+
+<div id="page-infra" class="page">
+<h2>Infrastructure</h2>
+</div>
+
+
+<div id="page-resources" class="page">
+
+<h2>Useful Resources</h2>
+
+<a href="https://housing.com" target="_blank">Housing.com</a>
+
+<br>
+
+<a href="https://www.shiksha.com" target="_blank">Shiksha.com</a>
+
+</div>
+
+
+<script src="js/data.js"></script>
+<script src="js/dsalgo.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
