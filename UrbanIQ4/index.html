@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UrbanIQ — Compare Indian Cities</title>
+
+  <!-- Fonts & styles (keeps exact aesthetic from your sample) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">Urban<span>IQ</span></div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a onclick="showPage('cities')" id="nav-cities">Cities</a>
+    <a onclick="showPage('compare')" id="nav-compare">Compare</a>
+    <a onclick="showPage('hdi')" id="nav-hdi">HDI</a>
+    <a onclick="showPage('aqi')" id="nav-aqi">Air Quality</a>
+    <a onclick="showPage('infra')" id="nav-infra">Infrastructure</a>
+    <a onclick="showPage('resources')" id="nav-resources">Resources</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">India's Urban Intelligence Platform</div>
+      <h1 class="hero-title">Compare<br><em>Indian Cities</em><br>Intelligently</h1>
+      <p class="hero-sub">Housing, HDI, AQI, income, infrastructure — all in one place. Make smarter decisions about where to live, study, or work.</p>
+
+      <div class="search-bar">
+        <div class="search-field">
+          <label>City</label>
+          <select id="search-city" aria-label="Choose city">
+            <option value="all">All Cities</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Delhi NCR">Delhi NCR</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label>Category</label>
+          <select id="search-cat" aria-label="Choose category">
+            <option value="all">All Indicators</option>
+            <option value="housing">Housing</option>
+            <option value="education">Education</option>
+            <option value="aqi">Air Quality</option>
+            <option value="employment">Employment</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label>Profile</label>
+          <select id="search-profile" aria-label="Choose profile">
+            <option value="all">Anyone</option>
+            <option value="student">Student</option>
+            <option value="professional">Professional</option>
+            <option value="family">Family</option>
+          </select>
+        </div>
+
+        <button class="search-btn" id="searchBtn">Explore →</button>
+      </div>
+
+      <div id="results-panel" aria-live="polite">
+        <div class="results-header">
+          <h3 id="results-title">Results</h3>
+          <span class="results-header-sub" id="results-subtitle"></span>
+          <button class="results-close" id="closeResults" title="Close results">✕</button>
+        </div>
+        <div class="results-body" id="results-body"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Major Cities Covered</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">12+</div><div class="stat-label">Urban Indicators</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">2025</div><div class="stat-label">Data Reference Year</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Verified Data Sources</div></div>
+  </div>
+</div>
+
+<!-- CITIES page -->
+<div id="page-cities" class="page">
+  <section class="content">
+    <h2>Major Cities</h2>
+    <p>Choose a city from the Home search to view details, or use the dropdown there.</p>
+    <div id="cities-list" class="cities-list"></div>
+  </section>
+</div>
+
+<!-- COMPARE page (placeholder for comparison feature you can extend) -->
+<div id="page-compare" class="page">
+  <section class="content">
+    <h2>Compare Cities</h2>
+    <p>Use this page to compare two or more cities (extension: add checkboxes on results and render comparison table).</p>
+  </section>
+</div>
+
+<!-- HDI -->
+<div id="page-hdi" class="page">
+  <section class="content">
+    <h2>Human Development Index (HDI)</h2>
+    <p>HDI values and interpretation across cities.</p>
+    <div id="hdi-list"></div>
+  </section>
+</div>
+
+<!-- AQI -->
+<div id="page-aqi" class="page">
+  <section class="content">
+    <h2>Air Quality (AQI)</h2>
+    <p>Annual average AQI data and indicators.</p>
+    <div id="aqi-list"></div>
+  </section>
+</div>
+
+<!-- Infrastructure -->
+<div id="page-infra" class="page">
+  <section class="content">
+    <h2>Infrastructure</h2>
+    <div id="infra-list"></div>
+  </section>
+</div>
+
+<!-- Resources -->
+<div id="page-resources" class="page">
+  <section class="content">
+    <h2>Resources</h2>
+    <p>Useful external resources</p>
+    <ul>
+      <li><a href="https://housing.com" target="_blank" rel="noopener">Housing.com</a></li>
+      <li><a href="https://www.shiksha.com" target="_blank" rel="noopener">Shiksha.com</a></li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <p>UrbanIQ — Smart Urban Relocation Guide</p>
+</footer>
+
+<script src="js/dsalgo.js"></script>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
